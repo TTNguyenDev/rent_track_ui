@@ -1,0 +1,42 @@
+/* components/HouseCard.module.css */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+  overflow: hidden; /* This ensures that the contents do not spill outside the card */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cardTitle {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* This will add an ellipsis if the title is too long */
+}
+
+.cardAddress {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits the text to 3 lines */
+  -webkit-box-orient: vertical;
+  line-height: 1.4; /* Adjust line height to fit the three lines */
+  max-height: 4.2em; /* This is 3 times the line-height, to accommodate 3 lines */
+}
+
+.cardKind {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}

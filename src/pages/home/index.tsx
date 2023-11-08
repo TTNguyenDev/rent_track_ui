@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "./home.module.css";
 import { useEffect, useState } from "react";
+import HouseCard from "@/components/HouseCard";
 
 interface House {
   id: number;
@@ -56,7 +57,12 @@ const Home: NextPage = () => {
           {/* Replace with actual data */}
           {houses.map((house) => (
             <div key={house.id} className={styles.houseItem}>
-              {house.address}
+              <HouseCard
+                id={house.id}
+                name={house.name}
+                address={house.address}
+                kind={house.kind}
+              />
               {/* Add more house details here */}
             </div>
           ))}
