@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./home.module.css";
 import { useEffect, useState } from "react";
 import HouseCard from "@/components/HouseCard";
+import CreateHouse from "@/components/CreateHouse";
 
 interface House {
   id: number;
@@ -70,7 +71,7 @@ const Home: NextPage = () => {
 
         <section className={styles.content}>
           <h1 className={styles.title}>Welcome to Your Dashboard</h1>
-          {/* Main content */}
+          <CreateHouse />
         </section>
       </main>
 
