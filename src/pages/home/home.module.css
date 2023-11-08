@@ -1,0 +1,103 @@
+/* styles/Home.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.userName {
+  font-size: 1rem;
+  color: #333;
+}
+
+.navigation {
+  background: #f4f4f4;
+  padding: 1rem;
+  /* Navigation styling */
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 200px;
+  background: #e7e7e7;
+  padding: 1rem;
+  /* Sidebar styling */
+}
+
+.content {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.logo {
+  width: 100px; /* Example width, adjust as necessary */
+  height: auto;
+  object-fit: contain;
+}
+
+.avatar {
+  /* Keep your existing styles, and add object-fit if you want to ensure aspect ratio */
+  border-radius: 50%;
+  object-fit: cover; /* Ensures that the avatar does not get distorted */
+  overflow: hidden; /* Hides the parts of the image that overflow the circular shape */
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  padding: 1rem;
+  background: #f4f4f4;
+  text-align: center;
+  /* Footer styling */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+
+.houseItem {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  /* Add more styling as necessary */
+}
