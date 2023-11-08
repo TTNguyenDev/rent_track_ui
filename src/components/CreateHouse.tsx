@@ -45,24 +45,9 @@ const CreateHouse: React.FC = () => {
     }
   };
 
-  const formStyle = {
-    display: "flex",
-    flexDirection: "column",
-    maxWidth: "300px",
-    margin: "auto",
-  };
-
-  const inputStyle = {
-    marginBottom: "10px",
-    padding: "8px",
-    fontSize: "16px",
-    borderRadius: "4px",
-    border: "1px solid #ddd",
-  };
-
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <div>
+      <div className={styles.inputGroup}>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -71,10 +56,10 @@ const CreateHouse: React.FC = () => {
           value={houseData.name}
           onChange={handleChange}
           required
-          style={inputStyle}
+          className={styles.input}
         />
       </div>
-      <div>
+      <div className={styles.inputGroup}>
         <label htmlFor="address">Address:</label>
         <input
           type="text"
@@ -83,10 +68,10 @@ const CreateHouse: React.FC = () => {
           value={houseData.address}
           onChange={handleChange}
           required
-          style={inputStyle}
+          className={styles.input}
         />
       </div>
-      <div>
+      <div className={styles.inputGroup}>
         <label htmlFor="kind">Kind:</label>
         <select
           id="kind"
@@ -94,7 +79,7 @@ const CreateHouse: React.FC = () => {
           value={houseData.kind}
           onChange={handleChange}
           required
-          style={inputStyle}
+          className={styles.input}
         >
           <option value="Rooms">Rooms</option>
           <option value="House">House</option>
