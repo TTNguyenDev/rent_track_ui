@@ -101,3 +101,17 @@
   border-bottom: 1px solid #ccc;
   /* Add more styling as necessary */
 }
+.createHouseButton {
+  padding: 8px 16px;
+  margin-left: auto; /* Aligns the button to the right */
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.createHouseButton:hover {
+  background-color: #0056b3;
+}

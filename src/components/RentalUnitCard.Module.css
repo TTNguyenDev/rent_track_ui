@@ -1,18 +1,28 @@
+/* RentalUnitCard.module.css */
 .card {
-  border: 1px solid #ddd;
-  padding: 16px;
-  margin: 8px;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  padding: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.cardDetails {
+  /* Styles for the card details */
 }
 
-.card p {
-  margin: 8px 0;
-  line-height: 1.4;
-  color: #333;
+.addRenterButton {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto; /* This will push the button to the right side of the card */
+}
+
+.addRenterButton:hover {
+  background-color: #0056b3;
 }

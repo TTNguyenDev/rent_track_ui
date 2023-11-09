@@ -13,8 +13,10 @@ interface House {
   address: string;
   kind: string;
 }
+
 const Home: NextPage = () => {
   const [houses, setHouses] = useState<House[]>([]);
+  const [showCreateHouseModal, setShowCreateHouseModal] = useState(false);
 
   useEffect(() => {
     const fetchHouses = async () => {
@@ -27,6 +29,15 @@ const Home: NextPage = () => {
     };
     fetchHouses().catch(console.error);
   }, []);
+
+  const handleCreateHouseClick = () => {
+    setShowCreateHouseModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowCreateHouseModal(false);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -36,19 +47,14 @@ const Home: NextPage = () => {
       </Head>
 
       <header className={styles.header}>
-        <Image
-          src="/logo.png"
-          alt="Rent Track Logo"
-          className={styles.logo}
-          width={100}
-          height={50}
-        />
-        <div className={styles.userProfile}>
-          <div className={styles.avatar}>
-            <Image src="/avatar.jpg" alt="User Avatar" width={40} height={40} />
-          </div>
-          <span className={styles.userName}>Alex Doe</span>
-        </div>
+        <Image src="/logo.png" alt="Rent Track Logo" width={100} height={50} />
+        <button
+          onClick={handleCreateHouseClick}
+          className={styles.createHouseButton}
+        >
+          Create House
+        </button>
+        <div className={styles.userProfile}>{/* ... */}</div>
       </header>
 
       <nav className={styles.navigation}>{/* Navigation items */}</nav>
@@ -71,11 +77,11 @@ const Home: NextPage = () => {
 
         <section className={styles.content}>
           <h1 className={styles.title}>Welcome to Your Dashboard</h1>
-          <CreateHouse />
         </section>
       </main>
 
       <footer className={styles.footer}>{/* Footer content */}</footer>
+      {showCreateHouseModal && <CreateHouse onClose={handleCloseModal} />}
     </div>
   );
 };

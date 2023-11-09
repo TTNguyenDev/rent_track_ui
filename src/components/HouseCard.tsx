@@ -18,11 +18,9 @@ const HouseCard: React.FC<HouseCardProps> = ({ id, name, address, kind }) => {
   };
   return (
     <div onClick={showRentalUnit} className={styles.card}>
-      <div className={styles.card}>
-        <h3 className={styles.cardTitle}>{name}</h3>
-        <p className={styles.cardAddress}>{address}</p>
-        <p className={styles.cardKind}>{kind}</p>
-      </div>
+      <h3 className={styles.cardTitle}>{name}</h3>
+      <p className={styles.cardAddress}>{address}</p>
+      <p className={styles.cardKind}>{kind}</p>
     </div>
   );
 };

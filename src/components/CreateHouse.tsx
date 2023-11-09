@@ -8,7 +8,7 @@ interface HouseData {
   kind: "Rooms" | "House";
 }
 
-const CreateHouse: React.FC = () => {
+const CreateHouse = ({ onClose }: any) => {
   const [houseData, setHouseData] = useState<HouseData>({
     name: "",
     address: "",
@@ -46,49 +46,57 @@ const CreateHouse: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <div className={styles.inputGroup}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={houseData.name}
-          onChange={handleChange}
-          required
-          className={styles.input}
-        />
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContent}>
+        <button onClick={onClose} className={styles.closeButton}>
+          X
+        </button>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <h2>Create new house</h2>
+          <div className={styles.inputGroup}>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={houseData.name}
+              onChange={handleChange}
+              required
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="address">Address:</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value={houseData.address}
+              onChange={handleChange}
+              required
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="kind">Kind:</label>
+            <select
+              id="kind"
+              name="kind"
+              value={houseData.kind}
+              onChange={handleChange}
+              required
+              className={styles.input}
+            >
+              <option value="Rooms">Rooms</option>
+              <option value="House">House</option>
+            </select>
+          </div>
+          <button type="submit" className={styles.button}>
+            Create House
+          </button>
+        </form>
       </div>
-      <div className={styles.inputGroup}>
-        <label htmlFor="address">Address:</label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          value={houseData.address}
-          onChange={handleChange}
-          required
-          className={styles.input}
-        />
-      </div>
-      <div className={styles.inputGroup}>
-        <label htmlFor="kind">Kind:</label>
-        <select
-          id="kind"
-          name="kind"
-          value={houseData.kind}
-          onChange={handleChange}
-          required
-          className={styles.input}
-        >
-          <option value="Rooms">Rooms</option>
-          <option value="House">House</option>
-        </select>
-      </div>
-      <button type="submit" className={styles.button}>
-        Create House
-      </button>
-    </form>
+    </div>
   );
 };
 

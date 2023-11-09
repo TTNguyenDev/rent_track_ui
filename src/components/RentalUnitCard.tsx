@@ -5,18 +5,30 @@ interface RentalUnitCardProps {
   houseId: number;
   price: number;
   status: string;
+  onAddRenter?: (houseId: number) => void; // Optional prop for handling the add renter event
 }
 
 const RentalUnitCard: React.FC<RentalUnitCardProps> = ({
   houseId,
   price,
   status,
+  onAddRenter,
 }) => {
   return (
     <div className={styles.card}>
-      <p>House ID: {houseId}</p>
-      <p>Price: ${price}</p>
-      <p>Status: {status}</p>
+      <div className={styles.cardDetails}>
+        <p>House ID: {houseId}</p>
+        <p>Price: ${price}</p>
+        <p>Status: {status}</p>
+      </div>
+      {status === "Empty" && onAddRenter && (
+        <button
+          className={styles.addRenterButton}
+          onClick={() => onAddRenter(houseId)}
+        >
+          Add Renter
+        </button>
+      )}
     </div>
   );
 };
